@@ -91,7 +91,7 @@ Normalize uma tabela na terceira forma normal e acesse as informações desta ta
 ### Antes de começar a desenvolver
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-017-mysql-one-for-all.git`.
+  * `git clone git@github.com:tryber/sd-017-mysql-one-for-all.git`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-017-mysql-one-for-all`
 
