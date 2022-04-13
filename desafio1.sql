@@ -76,7 +76,7 @@ CREATE TABLE SpotifyClone.album
  CREATE TABLE SpotifyClone.historico
  (
 	usuario_id INT,
-	historico_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	historico_id INT NOT NULL AUTO_INCREMENT,
     data_reproducao VARCHAR(100) NOT NULL,
     cancoes_id INT,
     
@@ -85,14 +85,14 @@ CREATE TABLE SpotifyClone.album
     FOREIGN KEY (cancoes_id) REFERENCES musicas (cancoes_id)
 ) engine = InnoDB;
 
-
 CREATE TABLE SpotifyClone.seguidores
 (
 	usuario_id INT,
     artista_id INT,
     
-    CONSTRAINT FK_artist FOREIGN KEY (artista_id)
-    REFERENCES artist(artista_id)
+    CONSTRAINT PRIMARY KEY(usuario_id, artista_id),
+    FOREIGN KEY (artista_id) REFERENCES artist(artista_id),
+    FOREIGN KEY (usuario_id) REFERENCES user (usuario_id)
 );
 
 
