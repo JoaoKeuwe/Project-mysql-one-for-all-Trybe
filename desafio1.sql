@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS SpotifyClone;
-CREATE DATABASE SpotifyClone;
 
+CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE SpotifyClone.plan
@@ -80,11 +80,11 @@ CREATE TABLE SpotifyClone.album
     data_reproducao VARCHAR(100) NOT NULL,
     cancoes_id INT,
     
-    FOREIGN KEY (cancoes_id)
-    REFERENCES musicas (cancoes_id),
-
-    FOREIGN KEY (usuario_id)
-    REFERENCES user (usuario_id)
+    CONSTRAINT FK_musicas FOREIGN KEY (cancoes_id)
+    REFERENCES artist(cancoes_id),
+    
+    CONSTRAINT FK_user FOREIGN KEY (usuario_id)
+    REFERENCES artist(usuario_id)
 ) engine = InnoDB;
 
 
@@ -92,12 +92,9 @@ CREATE TABLE SpotifyClone.seguidores
 (
 	usuario_id INT,
     artista_id INT,
-
-	FOREIGN KEY (usuario_id)
-    REFERENCES user (usuario_id),
-
-    FOREIGN KEY (artista_id)
-    REFERENCES artist (artista_id)
+    
+    CONSTRAINT FK_artist FOREIGN KEY (artista_id)
+    REFERENCES artist(artista_id)
 );
 
 
