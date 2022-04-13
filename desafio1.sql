@@ -1,6 +1,8 @@
 DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 
+USE SpotifyClone;
+
 CREATE TABLE SpotifyClone.plan
 (
     plano VARCHAR(50)
