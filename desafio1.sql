@@ -76,7 +76,6 @@ CREATE TABLE SpotifyClone.album
  CREATE TABLE SpotifyClone.historico
  (
 	usuario_id INT,
-	historico_id INT NOT NULL AUTO_INCREMENT,
     data_reproducao VARCHAR(100) NOT NULL,
     cancoes_id INT,
     
@@ -90,11 +89,10 @@ CREATE TABLE SpotifyClone.seguidores
 	usuario_id INT,
     artista_id INT,
     
-    CONSTRAINT PRIMARY KEY(usuario_id, artista_id),
+    CONSTRAINT PRIMARY KEY(artista_id,usuario_id),
     FOREIGN KEY (artista_id) REFERENCES artist(artista_id),
     FOREIGN KEY (usuario_id) REFERENCES user (usuario_id)
 );
-
 
 INSERT INTO SpotifyClone.plan 
 (plano,valor_plano)
