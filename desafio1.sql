@@ -80,11 +80,9 @@ CREATE TABLE SpotifyClone.album
     data_reproducao VARCHAR(100) NOT NULL,
     cancoes_id INT,
     
-    CONSTRAINT FK_musicas FOREIGN KEY (cancoes_id)
-    REFERENCES artist(cancoes_id),
-    
-    CONSTRAINT FK_user FOREIGN KEY (usuario_id)
-    REFERENCES artist(usuario_id)
+    CONSTRAINT PRIMARY KEY(cancoes_id, usuario_id),
+    FOREIGN KEY (usuario_id) REFERENCES user (usuario_id),
+    FOREIGN KEY (cancoes_id) REFERENCES musicas (cancoes_id)
 ) engine = InnoDB;
 
 
