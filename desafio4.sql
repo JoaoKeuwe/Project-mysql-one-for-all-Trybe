@@ -1,8 +1,8 @@
 SELECT
 	DISTINCT user.usuario AS usuario,
 CASE
- WHEN MAX(YEAR(cond.data_reproducao ))= 2021 THEN 'usuario ativo'
- ELSE 'usuario inativo'
+ WHEN MAX(YEAR(cond.data_reproducao ))= 2021 THEN 'Usuário ativo'
+ ELSE 'Usuário inativo'
  END
  AS condicao_usuario
 FROM 
